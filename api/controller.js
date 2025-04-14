@@ -68,38 +68,39 @@ const {
       handleGetByIndex(classService, req.params.index, res, next),
     createClass: (req, res, next) => handleCreate(classService, req.body, res, next),
     updateClass: (req, res, next) => handleUpdate(classService, req.params.index, req.body, res, next),
-
+    deleteClass: (req, res, next) => handleDelete(classService, req.params.index, res, next),
+  
     // Races
     getAllRaces: (req, res, next) => handleGetAll(raceService, res, next),
     getRaceByIndex: (req, res, next) =>
       handleGetByIndex(raceService, req.params.index, res, next),
     createRace: (req, res, next) => handleCreate(raceService, req.body, res, next),
     updateRace: (req, res, next) => handleUpdate(raceService, req.params.index, req.body, res, next),
+    deleteRace: (req, res, next) => handleDelete(raceService, req.params.index, res, next),
   
-
     // Spells
     getAllSpells: (req, res, next) => handleGetAll(spellService, res, next),
     getSpellByIndex: (req, res, next) =>
       handleGetByIndex(spellService, req.params.index, res, next),
     createSpell: (req, res, next) => handleCreate(spellService, req.body, res, next),
     updateSpell: (req, res, next) => handleUpdate(spellService, req.params.index, req.body, res, next),
+    deleteSpell: (req, res, next) => handleDelete(spellService, req.params.index, res, next),
   
-
     // Monsters
     getAllMonsters: (req, res, next) => handleGetAll(monsterService, res, next),
     getMonsterByIndex: (req, res, next) =>
       handleGetByIndex(monsterService, req.params.index, res, next),
     createMonster: (req, res, next) => handleCreate(monsterService, req.body, res, next),
     updateMonster: (req, res, next) => handleUpdate(monsterService, req.params.index, req.body, res, next),
+    deleteMonster: (req, res, next) => handleDelete(monsterService, req.params.index, res, next),
   
-
     // Equipment
     getAllEquipment: (req, res, next) => handleGetAll(equipmentService, res, next),
     getEquipmentByIndex: (req, res, next) =>
       handleGetByIndex(equipmentService, req.params.index, res, next),
     createEquipment: (req, res, next) => handleCreate(equipmentService, req.body, res, next),
     updateEquipment: (req, res, next) => handleUpdate(equipmentService, req.params.index, req.body, res, next),
-  
+    deleteEquipment: (req, res, next) => handleDelete(equipmentService, req.params.index, res, next), 
 
     // Ability Scores
     getAllAbilityScores: (req, res, next) => handleGetAll(abilityScoresService, res, next),
@@ -108,7 +109,7 @@ const {
     createAbilityScore: (req, res, next) =>
       handleCreate(abilityScoresService, req.body, res, next),
     updateAbilityScore: (req, res, next) => handleUpdate(abilityScoresService, req.params.index, req.body, res, next),
-  
+    deleteAbilityScore: (req, res, next) => handleDelete(abilityScoresService, req.params.index, res, next),  
   
     // Proficiencies
     getAllProficiencies: (req, res, next) => handleGetAll(proficienciesService, res, next),
@@ -117,7 +118,7 @@ const {
     createProficiency: (req, res, next) =>
       handleCreate(proficienciesService, req.body, res, next),
     updateProficiency: (req, res, next) => handleUpdate(proficienciesService, req.params.index, req.body, res, next),
-  
+    deleteProficiency: (req, res, next) => handleDelete(proficienciesService, req.params.index, res, next),
     
     // Skills
     getAllSkills: (req, res, next) => handleGetAll(skillsService, res, next),
@@ -125,7 +126,7 @@ const {
       handleGetByIndex(skillsService, req.params.index, res, next),
     createSkill: (req, res, next) => handleCreate(skillsService, req.body, res, next),
     updateSkill: (req, res, next) => handleUpdate(skillsService, req.params.index, req.body, res, next),
-  
+    deleteSkill: (req, res, next) => handleDelete(skillsService, req.params.index, res, next),
 
     // Features
     getAllFeatures: (req, res, next) => handleGetAll(featuresService, res, next),
@@ -133,8 +134,7 @@ const {
       handleGetByIndex(featuresService, req.params.index, res, next),
     createFeature: (req, res, next) => handleCreate(featuresService, req.body, res, next),
     updateFeature: (req, res, next) => handleUpdate(featuresService, req.params.index, req.body, res, next),
-  
-    
+    deleteFeature: (req, res, next) => handleDelete(featuresService, req.params.index, res, next),
 
     // Alignments
     getAllAlignments: (req, res, next) => handleGetAll(alignmentsService, res, next),
@@ -143,6 +143,6 @@ const {
     createAlignment: (req, res, next) =>
       handleCreate(alignmentsService, req.body, res, next),
     updateAlignment: (req, res, next) => handleUpdate(alignmentsService, req.params.index, req.body, res, next),
-  
+    deleteAlignment: (req, res, next) => handleDelete(alignmentsService, req.params.index, res, next),
   };
   
