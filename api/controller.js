@@ -48,6 +48,16 @@ const {
       next(err);
     }
   }
+ 
+  async function handleDelete(service, index, res, next) {
+    try {
+      const deletedData = await service.delete(index);
+      if (!deletedData) return res.status(404).json({ message: 'Not found to delete' });
+      res.status(200).json({ message: 'Deleted successfully' });
+    } catch (err) {
+      next(err);
+    }
+  }
   
   
   // Controllers
