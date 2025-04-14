@@ -29,6 +29,15 @@ const {
       next(err);
     }
   }
+
+  async function handleCreate(service, data, res, next) {
+    try {
+      const createdData = await service.create(data);
+      res.status(201).json(createdData);
+    } catch (err) {
+      next(err);
+    }
+  }
   
   // Controllers
   module.exports = {
@@ -36,50 +45,63 @@ const {
     getAllClasses: (req, res, next) => handleGetAll(classService, res, next),
     getClassByIndex: (req, res, next) =>
       handleGetByIndex(classService, req.params.index, res, next),
-  
+    createClass: (req, res, next) => handleCreate(classService, req.body, res, next),
+
     // Races
     getAllRaces: (req, res, next) => handleGetAll(raceService, res, next),
     getRaceByIndex: (req, res, next) =>
       handleGetByIndex(raceService, req.params.index, res, next),
-  
+    createRace: (req, res, next) => handleCreate(raceService, req.body, res, next),
+
     // Spells
     getAllSpells: (req, res, next) => handleGetAll(spellService, res, next),
     getSpellByIndex: (req, res, next) =>
       handleGetByIndex(spellService, req.params.index, res, next),
-  
+    createSpell: (req, res, next) => handleCreate(spellService, req.body, res, next),
+
     // Monsters
     getAllMonsters: (req, res, next) => handleGetAll(monsterService, res, next),
     getMonsterByIndex: (req, res, next) =>
       handleGetByIndex(monsterService, req.params.index, res, next),
-  
+    createMonster: (req, res, next) => handleCreate(monsterService, req.body, res, next),
+
     // Equipment
     getAllEquipment: (req, res, next) => handleGetAll(equipmentService, res, next),
     getEquipmentByIndex: (req, res, next) =>
       handleGetByIndex(equipmentService, req.params.index, res, next),
-  
+    createEquipment: (req, res, next) => handleCreate(equipmentService, req.body, res, next),
+
     // Ability Scores
     getAllAbilityScores: (req, res, next) => handleGetAll(abilityScoresService, res, next),
     getAbilityScoreByIndex: (req, res, next) =>
       handleGetByIndex(abilityScoresService, req.params.index, res, next),
+    createAbilityScore: (req, res, next) =>
+      handleCreate(abilityScoresService, req.body, res, next),
   
     // Proficiencies
     getAllProficiencies: (req, res, next) => handleGetAll(proficienciesService, res, next),
     getProficiencyByIndex: (req, res, next) =>
       handleGetByIndex(proficienciesService, req.params.index, res, next),
-  
+    createProficiency: (req, res, next) =>
+      handleCreate(proficienciesService, req.body, res, next),
+    
     // Skills
     getAllSkills: (req, res, next) => handleGetAll(skillsService, res, next),
     getSkillByIndex: (req, res, next) =>
       handleGetByIndex(skillsService, req.params.index, res, next),
-  
+    createSkill: (req, res, next) => handleCreate(skillsService, req.body, res, next),
+
     // Features
     getAllFeatures: (req, res, next) => handleGetAll(featuresService, res, next),
     getFeatureByIndex: (req, res, next) =>
       handleGetByIndex(featuresService, req.params.index, res, next),
-  
+    createFeature: (req, res, next) => handleCreate(featuresService, req.body, res, next),
+
     // Alignments
     getAllAlignments: (req, res, next) => handleGetAll(alignmentsService, res, next),
     getAlignmentByIndex: (req, res, next) =>
       handleGetByIndex(alignmentsService, req.params.index, res, next),
+    createAlignment: (req, res, next) =>
+      handleCreate(alignmentsService, req.body, res, next),
   };
   
