@@ -16,6 +16,7 @@ const {
     getByIndex: (index) => Classes.findOne({ index }),
     create: (data) => Classes.create(data),
     update: (index, data) => Classes.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Classes.findOneAndDelete({ index }),
   };
   
   const raceRepo = {
@@ -23,6 +24,7 @@ const {
     getByIndex: (index) => Races.findOne({ index }),
     create: (index, data) => Races.findOneAndUpdate({ index }, data, { new : true}),
     update: (index, data) => Races.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Races.findOneAndDelete({ index }),
   };
   
   const spellRepo = {
@@ -30,6 +32,7 @@ const {
     getByIndex: (index) => Spells.findOne({ index }),
     create: (data) => Spells.create(data),
     update: (index, data) => Spells.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Spells.findOneAndDelete({ index }),
   };
   
   const monsterRepo = {
@@ -37,6 +40,7 @@ const {
     getByIndex: (index) => Monsters.findOne({ index }),
     create: (data) => Monsters.create(data),
     update: (index, data) => Monsters.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Monsters.findOneAndDelete({ index }),
   };
   
   const equipmentRepo = {
@@ -44,6 +48,7 @@ const {
     getByIndex: (index) => Equipment.findOne({ index }),
     create: (data) => Equipment.create(data),
     update: (index, data) => Equipment.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Equipment.findOneAndDelete({ index }),
   };
   
   const abilityScoresRepo = {
@@ -51,6 +56,7 @@ const {
     getByIndex: (index) => AbilityScores.findOne({ index }),
     create: (data) => Monsters.create(data),
     update: (index, data) => AbilityScores.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => AbilityScores.findOneAndDelete({ index }),
   };
   
   const proficienciesRepo = {
@@ -58,6 +64,7 @@ const {
     getByIndex: (index) => Proficiencies.findOne({ index }),
     create: (data) => Proficiencies.create(data),
     update: (index, data) => Proficiencies.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Proficiencies.findOneAndDelete({ index }),
   };
   
   const skillsRepo = {
@@ -65,6 +72,7 @@ const {
     getByIndex: (index) => Skills.findOne({ index }),
     create: (data) => Skills.create(data),
     update: (index, data) => Skills.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Skills.findOneAndDelete({ index }),
   };
   
   const featuresRepo = {
@@ -72,6 +80,7 @@ const {
     getByIndex: (index) => Features.findOne({ index }),
     create: (data) => Features.create(data),
     update: (index, data) => Features.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Features.findOneAndDelete({ index }),
   };
   
   const alignmentsRepo = {
@@ -79,6 +88,7 @@ const {
     getByIndex: (index) => Alignments.findOne({ index }),
     create: (data) => Alignments.create(data),
     update: (index, data) => Alignments.findOneAndUpdate({ index }, data, { new: true }),
+    delete: (index) => Alignments.findOneAndDelete({ index }),
   };
   
   module.exports = {

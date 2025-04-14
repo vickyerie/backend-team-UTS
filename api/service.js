@@ -16,6 +16,7 @@ const {
     getByIndex: (index) => classRepo.getByIndex(index),
     create: (data) => classRepo.create(data),
     update: (index, data) => classRepo.update(index, data),
+    deleteByIndex: (index) => classRepo.delete(index),
   };
   
   const raceService = {
@@ -23,6 +24,7 @@ const {
     getByIndex: (index) => raceRepo.getByIndex(index),
     create: (data) => raceRepo.create(data),
     update: (index, data) => raceRepo.update(index, data),
+    deleteByIndex: (index) => raceRepo.delete(index),
   };
   
   const spellService = {
@@ -30,6 +32,7 @@ const {
     getByIndex: (index) => spellRepo.getByIndex(index),
     create: (data) => spellRepo.create(data),
     update: (index, data) => spellRepo.update(index, data),
+    deleteByIndex: (index) => spellRepo.delete(index),
   };
   
   const monsterService = {
@@ -37,6 +40,7 @@ const {
     getByIndex: (index) => monsterRepo.getByIndex(index),
     create: (data) => monsterRepo.create(data),
     update: (index, data) => monsterRepo.update(index, data),
+    deleteByIndex: (index) => monsterRepo.delete(index),
   };
   
   const equipmentService = {
@@ -44,6 +48,7 @@ const {
     getByIndex: (index) => equipmentRepo.getByIndex(index),
     create: (data) => equipmentRepo.create(data),
     update: (index, data) => equipmentRepo.update(index, data),
+    deleteByIndex: (index) => equipmentRepo.delete(index),
   };
   
   const abilityScoresService = {
@@ -51,6 +56,7 @@ const {
     getByIndex: (index) => abilityScoresRepo.getByIndex(index),
     create: (data) => abilityScoresRepo.create(data),
     update: (index, data) => abilityScoresRepo.update(index, data),
+    deleteByIndex: (index) => abilityScoresRepo.delete(index),
   };
   
   const proficienciesService = {
@@ -58,6 +64,7 @@ const {
     getByIndex: (index) => proficienciesRepo.getByIndex(index),
     create: (data) => proficienciesRepo.create(data),
     update: (index, data) => proficienciesRepo.update(index, data),
+    deleteByIndex: (index) => proficienciesRepo.delete(index),
   };
   
   const skillsService = {
@@ -65,6 +72,7 @@ const {
     getByIndex: (index) => skillsRepo.getByIndex(index),
     create: (data) => skillsRepo.create(data),
     update: (index, data) => skillsRepo.update(index, data),
+    deleteByIndex: (index) => skillsRepo.delete(index),
   };
   
   const featuresService = {
@@ -72,6 +80,7 @@ const {
     getByIndex: (index) => featuresRepo.getByIndex(index),
     create: (data) => featuresRepo.create(data),
     update: (index, data) => featuresRepo.update(index, data),
+    deleteByIndex: (index) => featuresRepo.delete(index),
   };
   
   const alignmentsService = {
@@ -79,6 +88,7 @@ const {
     getByIndex: (index) => alignmentsRepo.getByIndex(index),
     create: (data) => alignmentsRepo.create(data),
     update: (index, data) => alignmentsRepo.update(index, data),
+    deleteByIndex: (index) => alignmentsRepo.delete(index),
   };
   
   module.exports = {
