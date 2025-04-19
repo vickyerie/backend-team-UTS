@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+const getModels = require('../models/schema');
+
 const {
     Classes,
     Races,
@@ -9,7 +12,7 @@ const {
     Skills,
     Features,
     Alignments,
-  } = require('../../models');
+  } = getModels(mongoose);
   
   const classRepo = {
     getAll: () => Classes.find({}),
