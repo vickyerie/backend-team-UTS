@@ -51,7 +51,7 @@ const {
  
   async function handleDelete(service, index, res, next) {
     try {
-      const deletedData = await service.delete(index);
+      const deletedData = await service.deleteByIndex(index);
       if (!deletedData) return res.status(404).json({ message: 'Not found to delete' });
       res.status(200).json({ message: 'Deleted successfully' });
     } catch (err) {

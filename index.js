@@ -6,6 +6,7 @@ const db = mongoose.connection;
 const port = 3000;
 
 app.use(express.json());
+require('./api/route')(app);
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}.`);
