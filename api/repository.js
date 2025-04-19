@@ -25,7 +25,7 @@ const {
   const raceRepo = {
     getAll: () => Races.find({}),
     getByIndex: (index) => Races.findOne({ index }),
-    create: (index, data) => Races.findOneAndUpdate({ index }, data, { new : true}),
+    create: (data) => Races.create(data),
     update: (index, data) => Races.findOneAndUpdate({ index }, data, { new: true }),
     delete: (index) => Races.findOneAndDelete({ index }),
   };
