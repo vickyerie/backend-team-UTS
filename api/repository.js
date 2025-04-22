@@ -57,7 +57,7 @@ const {
   const abilityScoresRepo = {
     getAll: () => AbilityScores.find({}),
     getByIndex: (index) => AbilityScores.findOne({ index }),
-    create: (data) => Monsters.create(data),
+    create: (data) => AbilityScores.create(data),
     update: (index, data) => AbilityScores.findOneAndUpdate({ index }, data, { new: true }),
     delete: (index) => AbilityScores.findOneAndDelete({ index }),
   };
