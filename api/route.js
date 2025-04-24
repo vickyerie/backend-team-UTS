@@ -22,6 +22,8 @@ module.exports = (app) => {
   // Spells
   routes.get('/spells', controller.getAllSpells);
   routes.get('/spells/:index', controller.getSpellByIndex);
+  routes.get('/spells/level/:level', controller.getSpellByLevel);
+  routes.get('/spells/school/:school', controller.getSpellBySchool);
   routes.post('/spells', controller.createSpell);
   routes.put('/spells/:index', controller.updateSpell);
   routes.delete('/spells/:index', controller.deleteSpell);
@@ -57,6 +59,7 @@ module.exports = (app) => {
   // Skills
   routes.get('/skills', controller.getAllSkills);
   routes.get('/skills/:index', controller.getSkillByIndex);
+  routes.get('/skills/ability-score/:ability_score', controller.getSkillByAbilityScore);
   routes.post('/skills', controller.createSkill);
   routes.put('/skills/:index', controller.updateSkill);
   routes.delete('/skills/:index', controller.deleteSkill);
@@ -64,6 +67,8 @@ module.exports = (app) => {
   // Features
   routes.get('/features', controller.getAllFeatures);
   routes.get('/features/:index', controller.getFeatureByIndex);
+  routes.get('/features/level/:level', controller.getFeatureByLevel);
+  routes.get('/features/class/:class', controller.getFeatureByClass);
   routes.post('/features', controller.createFeature);
   routes.put('/features/:index', controller.updateFeature);
   routes.delete('/features/:index', controller.deleteFeature);

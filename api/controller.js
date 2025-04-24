@@ -30,6 +30,46 @@ const {
     }
   }
 
+  async function handleGetByLevel(service, level, res, next){
+    try{
+      const data = await service.getByLevel(level);
+      if(!data) return res.status(404).json({ message: 'Not found' });
+      res.status(200).json(data);
+    } catch (err){
+      next(err);
+    }
+  }
+
+  async function handleGetBySchool(service, school, res, next){
+    try{
+      const data = await service.getBySchool(school);
+      if(!data) return res.status(404).json({ message: 'Not Found'});
+      res.status(200).json(data);
+    } catch (err){
+      next(err);
+    }
+  }
+
+  async function handleGetByClass(service, classs, res, next){
+    try{
+      const data = await service.getByClass(classs);
+      if(!data) return res.status(404).json({ message: 'Not Found'});
+      res.status(200).json(data);
+    } catch (err){
+      next(err);
+    }
+  }
+
+  async function handleGetByAbilityScore(service, ability_score, res, next){
+    try{
+      const data = await service.getByAbilityScore(ability_score);
+      if(!data) return res.status(404).json({ message: 'Not Found'});
+      res.status(200).json(data);
+    } catch (err){
+      next(err);
+    }
+  }
+
   async function handleCreate(service, data, res, next) {
     try {
       const createdData = await service.create(data);
@@ -58,6 +98,8 @@ const {
       next(err);
     }
   }
+
+  
   
   
   // Controllers
@@ -82,6 +124,8 @@ const {
     getAllSpells: (req, res, next) => handleGetAll(spellService, res, next),
     getSpellByIndex: (req, res, next) =>
       handleGetByIndex(spellService, req.params.index, res, next),
+    getSpellByLevel: (req, res, next) => handleGetByLevel(spellService, req.params.level, res, next),
+    getSpellBySchool: (req, res, next) => handleGetBySchool(spellService, req.params.school, res, next),
     createSpell: (req, res, next) => handleCreate(spellService, req.body, res, next),
     updateSpell: (req, res, next) => handleUpdate(spellService, req.params.index, req.body, res, next),
     deleteSpell: (req, res, next) => handleDelete(spellService, req.params.index, res, next),
@@ -125,6 +169,7 @@ const {
     getSkillByIndex: (req, res, next) =>
       handleGetByIndex(skillsService, req.params.index, res, next),
     createSkill: (req, res, next) => handleCreate(skillsService, req.body, res, next),
+    getSkillByAbilityScore: (req, res, next) => handleGetByAbilityScore(skillsService, req.params.ability_score, res, next),
     updateSkill: (req, res, next) => handleUpdate(skillsService, req.params.index, req.body, res, next),
     deleteSkill: (req, res, next) => handleDelete(skillsService, req.params.index, res, next),
 
@@ -132,6 +177,8 @@ const {
     getAllFeatures: (req, res, next) => handleGetAll(featuresService, res, next),
     getFeatureByIndex: (req, res, next) =>
       handleGetByIndex(featuresService, req.params.index, res, next),
+    getFeatureByLevel: (req, res, next) => handleGetByLevel(featuresService, req.params.level, res, next),
+    getFeatureByClass: (req, res, next) => handleGetByClass(featuresService, req.params.classs, res, next),
     createFeature: (req, res, next) => handleCreate(featuresService, req.body, res, next),
     updateFeature: (req, res, next) => handleUpdate(featuresService, req.params.index, req.body, res, next),
     deleteFeature: (req, res, next) => handleDelete(featuresService, req.params.index, res, next),
