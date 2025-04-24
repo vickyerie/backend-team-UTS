@@ -30,6 +30,16 @@ const {
     }
   }
 
+  async function handleGetByName(service, name, res, next) {
+    try {
+      const data = await service.getByName(name);
+      if (!data) return res.status(404).json({ message: 'Not found' });
+      res.status(200).json(data);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   async function handleGetByLevel(service, level, res, next){
     try{
       const data = await service.getByLevel(level);
@@ -106,6 +116,7 @@ const {
   module.exports = {
     // Classes
     getAllClasses: (req, res, next) => handleGetAll(classService, res, next),
+    getClassByName: (req, res, next) => handleGetByName(classService, req.params.name, res, next),
     getClassByIndex: (req, res, next) =>
       handleGetByIndex(classService, req.params.index, res, next),
     createClass: (req, res, next) => handleCreate(classService, req.body, res, next),
@@ -114,6 +125,7 @@ const {
   
     // Races
     getAllRaces: (req, res, next) => handleGetAll(raceService, res, next),
+    getRaceByName: (req, res, next) => handleGetByName(raceService, req.params.name, res, next),
     getRaceByIndex: (req, res, next) =>
       handleGetByIndex(raceService, req.params.index, res, next),
     createRace: (req, res, next) => handleCreate(raceService, req.body, res, next),
@@ -122,6 +134,7 @@ const {
   
     // Spells
     getAllSpells: (req, res, next) => handleGetAll(spellService, res, next),
+    getSpellByName: (req, res, next) => handleGetByName(spellService, req.params.name, res, next),
     getSpellByIndex: (req, res, next) =>
       handleGetByIndex(spellService, req.params.index, res, next),
     getSpellByLevel: (req, res, next) => handleGetByLevel(spellService, req.params.level, res, next),
@@ -132,6 +145,7 @@ const {
   
     // Monsters
     getAllMonsters: (req, res, next) => handleGetAll(monsterService, res, next),
+    getMonsterByName: (req, res, next) => handleGetByName(monsterService, req.params.name, res, next),
     getMonsterByIndex: (req, res, next) =>
       handleGetByIndex(monsterService, req.params.index, res, next),
     createMonster: (req, res, next) => handleCreate(monsterService, req.body, res, next),
@@ -140,6 +154,7 @@ const {
   
     // Equipment
     getAllEquipment: (req, res, next) => handleGetAll(equipmentService, res, next),
+    getEquipmentByName: (req, res, next) => handleGetByName(equipmentService, req.params.name, res, next),
     getEquipmentByIndex: (req, res, next) =>
       handleGetByIndex(equipmentService, req.params.index, res, next),
     createEquipment: (req, res, next) => handleCreate(equipmentService, req.body, res, next),
@@ -148,6 +163,7 @@ const {
 
     // Ability Scores
     getAllAbilityScores: (req, res, next) => handleGetAll(abilityScoresService, res, next),
+    getAbilityScoreByName: (req, res, next) => handleGetByName(abilityScoresService, req.params.name, res, next),
     getAbilityScoreByIndex: (req, res, next) =>
       handleGetByIndex(abilityScoresService, req.params.index, res, next),
     createAbilityScore: (req, res, next) =>
@@ -157,6 +173,7 @@ const {
   
     // Proficiencies
     getAllProficiencies: (req, res, next) => handleGetAll(proficienciesService, res, next),
+    getProficiencyByName: (req, res, next) => handleGetByName(proficienciesService, req.params.name, res, next),
     getProficiencyByIndex: (req, res, next) =>
       handleGetByIndex(proficienciesService, req.params.index, res, next),
     createProficiency: (req, res, next) =>
@@ -166,6 +183,7 @@ const {
     
     // Skills
     getAllSkills: (req, res, next) => handleGetAll(skillsService, res, next),
+    getSkillByName: (req, res, next) => handleGetByName(skillsService, req.params.name, res, next),
     getSkillByIndex: (req, res, next) =>
       handleGetByIndex(skillsService, req.params.index, res, next),
     createSkill: (req, res, next) => handleCreate(skillsService, req.body, res, next),
@@ -175,6 +193,7 @@ const {
 
     // Features
     getAllFeatures: (req, res, next) => handleGetAll(featuresService, res, next),
+    getFeatureByName: (req, res, next) => handleGetByName(featuresService, req.params.name, res, next),
     getFeatureByIndex: (req, res, next) =>
       handleGetByIndex(featuresService, req.params.index, res, next),
     getFeatureByLevel: (req, res, next) => handleGetByLevel(featuresService, req.params.level, res, next),
@@ -185,6 +204,7 @@ const {
 
     // Alignments
     getAllAlignments: (req, res, next) => handleGetAll(alignmentsService, res, next),
+    getAlignmentByName: (req, res, next) => handleGetByName(alignmentsService, req.params.name, res, next),
     getAlignmentByIndex: (req, res, next) =>
       handleGetByIndex(alignmentsService, req.params.index, res, next),
     createAlignment: (req, res, next) =>

@@ -7,6 +7,7 @@ module.exports = (app) => {
 
   // Classes
   routes.get('/classes', controller.getAllClasses);
+  routes.get('/classes/name/:name', controller.getClassByName);
   routes.get('/classes/:index', controller.getClassByIndex);
   routes.post('/classes', controller.createClass);
   routes.put('/classes/:index', controller.updateClass);
@@ -14,6 +15,7 @@ module.exports = (app) => {
   
   // Races
   routes.get('/races', controller.getAllRaces);
+  routes.get('/races/name/:name', controller.getRaceByName);
   routes.get('/races/:index', controller.getRaceByIndex);
   routes.post('/races', controller.createRace);
   routes.put('/races/:index', controller.updateRace);
@@ -21,6 +23,7 @@ module.exports = (app) => {
 
   // Spells
   routes.get('/spells', controller.getAllSpells);
+  routes.get('/spells/name/:name', controller.getSpellByName);
   routes.get('/spells/:index', controller.getSpellByIndex);
   routes.get('/spells/level/:level', controller.getSpellByLevel);
   routes.get('/spells/school/:school', controller.getSpellBySchool);
@@ -30,6 +33,7 @@ module.exports = (app) => {
 
   // Monsters
   routes.get('/monsters', controller.getAllMonsters);
+  routes.get('/monsters/name/:name', controller.getMonsterByName);
   routes.get('/monsters/:index', controller.getMonsterByIndex);
   routes.post('/monsters', controller.createMonster);
   routes.put('/monsters/:index', controller.updateMonster);
@@ -37,6 +41,7 @@ module.exports = (app) => {
 
   // Equipment
   routes.get('/equipment', controller.getAllEquipment);
+  routes.get('/equipment/name/:name', controller.getEquipmentByName);
   routes.get('/equipment/:index', controller.getEquipmentByIndex);
   routes.post('/equipment', controller.createEquipment);
   routes.put('/equipment/:index', controller.updateEquipment);
@@ -44,6 +49,7 @@ module.exports = (app) => {
 
   // Ability Scores
   routes.get('/ability-scores', controller.getAllAbilityScores);
+  routes.get('/ability-scores/name/:name', controller.getAbilityScoreByName);
   routes.get('/ability-scores/:index', controller.getAbilityScoreByIndex);
   routes.post('/ability-scores', controller.createAbilityScore);
   routes.put('/ability-scores/:index', controller.updateAbilityScore);
@@ -51,6 +57,7 @@ module.exports = (app) => {
 
   // Proficiencies
   routes.get('/proficiencies', controller.getAllProficiencies);
+  routes.get('/proficiencies/name/:name', controller.getProficiencyByName);
   routes.get('/proficiencies/:index', controller.getProficiencyByIndex);
   routes.post('/proficiencies', controller.createProficiency);
   routes.put('/proficiencies/:index', controller.updateProficiency);
@@ -58,6 +65,7 @@ module.exports = (app) => {
 
   // Skills
   routes.get('/skills', controller.getAllSkills);
+  routes.get('/skills/name/:name', controller.getSkillByName);
   routes.get('/skills/:index', controller.getSkillByIndex);
   routes.get('/skills/ability-score/:ability_score', controller.getSkillByAbilityScore);
   routes.post('/skills', controller.createSkill);
@@ -66,6 +74,7 @@ module.exports = (app) => {
 
   // Features
   routes.get('/features', controller.getAllFeatures);
+  routes.get('/features/name/:name', controller.getFeatureByName);
   routes.get('/features/:index', controller.getFeatureByIndex);
   routes.get('/features/level/:level', controller.getFeatureByLevel);
   routes.get('/features/class/:class', controller.getFeatureByClass);
@@ -75,6 +84,7 @@ module.exports = (app) => {
 
   // Alignments
   routes.get('/alignments', controller.getAllAlignments);
+  routes.get('/alignments/name/:name', controller.getAlignmentByName);
   routes.get('/alignments/:index', controller.getAlignmentByIndex);
   routes.post('/alignments', controller.createAlignment);
   routes.put('/alignments/:index', controller.updateAlignment);
