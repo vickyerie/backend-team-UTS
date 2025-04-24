@@ -30,6 +30,8 @@ const {
   const spellService = {
     getAll: () => spellRepo.getAll(),
     getByIndex: (index) => spellRepo.getByIndex(index),
+    getByLevel: (level) => spellRepo.getByLevel(level),
+    getBySchool: (school) => spellRepo.getBySchool(school),
     create: (data) => spellRepo.create(data),
     update: (index, data) => spellRepo.update(index, data),
     deleteByIndex: (index) => spellRepo.delete(index),
@@ -70,6 +72,7 @@ const {
   const skillsService = {
     getAll: () => skillsRepo.getAll(),
     getByIndex: (index) => skillsRepo.getByIndex(index),
+    getByAbilityScore: (ability_score) => skillsRepo.getByAbilityScore(ability_score),
     create: (data) => skillsRepo.create(data),
     update: (index, data) => skillsRepo.update(index, data),
     deleteByIndex: (index) => skillsRepo.delete(index),
@@ -78,6 +81,8 @@ const {
   const featuresService = {
     getAll: () => featuresRepo.getAll(),
     getByIndex: (index) => featuresRepo.getByIndex(index),
+    getByLevel: (level) => featuresRepo.getByLevel(level),
+    getByClass: (classs) => featuresRepo.getByClass(classs),
     create: (data) => featuresRepo.create(data),
     update: (index, data) => featuresRepo.update(index, data),
     deleteByIndex: (index) => featuresRepo.delete(index),

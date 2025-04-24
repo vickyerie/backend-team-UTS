@@ -33,6 +33,8 @@ const {
   const spellRepo = {
     getAll: () => Spells.find({}),
     getByIndex: (index) => Spells.findOne({ index }),
+    getByLevel: (level) => Spells.findOne({ level }),
+    getBySchool: (school) => Spells.findOne({ school }),
     create: (data) => Spells.create(data),
     update: (index, data) => Spells.findOneAndUpdate({ index }, data, { new: true }),
     delete: (index) => Spells.findOneAndDelete({ index }),
@@ -73,6 +75,7 @@ const {
   const skillsRepo = {
     getAll: () => Skills.find({}),
     getByIndex: (index) => Skills.findOne({ index }),
+    getByAbilityScore: (ability_score) => Skills.findOne({ ability_score }),
     create: (data) => Skills.create(data),
     update: (index, data) => Skills.findOneAndUpdate({ index }, data, { new: true }),
     delete: (index) => Skills.findOneAndDelete({ index }),
@@ -81,6 +84,8 @@ const {
   const featuresRepo = {
     getAll: () => Features.find({}),
     getByIndex: (index) => Features.findOne({ index }),
+    getByLevel: (level) => Features.findOne({ level }),
+    getByClass: (classs) => Features.findOne({ classs }),
     create: (data) => Features.create(data),
     update: (index, data) => Features.findOneAndUpdate({ index }, data, { new: true }),
     delete: (index) => Features.findOneAndDelete({ index }),
